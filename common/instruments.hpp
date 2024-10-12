@@ -3,6 +3,7 @@
 #include <optional>
 #include <string_view>
 
+
 enum class InstrumentType
 {
     Call,
@@ -41,25 +42,13 @@ class Instrument
 };
 
 template<>
-float Instrument<InstrumentType::Call>::calcPnl(float spot)
-{
-    return ((spot > mStrike) ? (spot - *mStrike) : 0) - mPrice;
-}
+float Instrument<InstrumentType::Call>::calcPnl(float spot);
 
 template<>
-float Instrument<InstrumentType::Put>::calcPnl(float spot)
-{
-    return ((spot < mStrike) ? (*mStrike - spot) : 0) - mPrice;
-}
+float Instrument<InstrumentType::Put>::calcPnl(float spot);
 
 template<>
-float Instrument<InstrumentType::Equity>::calcPnl(float spot)
-{
-    return spot - mPrice;
-}
+float Instrument<InstrumentType::Equity>::calcPnl(float spot);
 
 template<>
-float Instrument<InstrumentType::Future>::calcPnl(float spot)
-{
-    return spot - mPrice;
-}
+float Instrument<InstrumentType::Future>::calcPnl(float spot);
