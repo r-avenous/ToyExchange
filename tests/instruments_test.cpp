@@ -1,4 +1,4 @@
-#include "common/instruments.hpp"
+#include "../common/instruments.hpp"
 
 int main()
 {

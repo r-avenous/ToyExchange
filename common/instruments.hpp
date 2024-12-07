@@ -29,9 +29,8 @@ class Instrument
         const std::string mTicker;
         InstrumentType mType;
     public:
-        Instrument(const std::string& ticker, float price, float strike = -1) : mTicker(ticker), mPrice(price), mStrike(strike), mType(type)
+        explicit Instrument(const std::string& ticker, float price, std::optional<float> strike = {}) : mTicker(ticker), mPrice(price), mStrike(strike), mType(type)
         {
-            if (strike < 0) mStrike = {};
         }
         friend std::ostream& operator<<(std::ostream& os, const Instrument& i)
         {
