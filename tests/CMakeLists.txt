@@ -1,0 +1,15 @@
+add_executable(instruments_test instruments_test.cpp)
+target_link_libraries(instruments_test PRIVATE common)
+add_test(NAME instruments_test COMMAND instruments_test)
+
+add_executable(matching_engine_test matching_engine_test.cpp)
+target_link_libraries(matching_engine_test PRIVATE common)
+add_test(NAME matching_engine_test COMMAND matching_engine_test)
+
+add_executable(user_test user_test.cpp)
+target_link_libraries(user_test PRIVATE common)
+add_test(NAME user_test COMMAND user_test)
+
+add_executable(matching_engine_router_test matching_engine_router_test.cpp)
+target_link_libraries(matching_engine_router_test PRIVATE common)
+add_test(NAME matching_engine_router_test COMMAND matching_engine_router_test)
